@@ -6,9 +6,17 @@ set +x
 export AWS_ACCOUNT_ID=$(aws sts get-caller-identity | jq .Account -r)
 echo "Your AWS account id is: ${AWS_ACCOUNT_ID}"
 
+if [ $# -eq 0 ]
+  then
+    DATALAKE=pkcdp
+    DATALAKE_BUCKET=pk-cdp
+  else
+    DATALAKE="$1"
+    DATALAKE_BUCKET="$2"
+fi
 
-export DATALAKE=pkcdp
-export DATALAKE_BUCKET=pk-cdp
+#export DATALAKE=pkcdp
+#export DATALAKE_BUCKET=pk-cdp
 export DATALAKE_PATH=${DATALAKE_BUCKET}/user/purnimak/dls/${DATALAKE}
 export REGION=us-west-2
 export PUBLIC_KEY=pk-uswest2
