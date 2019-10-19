@@ -42,4 +42,5 @@ cdp_endpoint_url = https://console.dps.mow-dev.cloudera.com/
 * `git clone --recursive https://https://github.com/purn1mak/cdp-demos`
 * `cd cdp-demos`
 * `./install_cdp_cli.sh`
-* `./
+* `./create_role.sh `
+* `./cleanup.sh`
