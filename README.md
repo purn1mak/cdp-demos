@@ -46,4 +46,5 @@ cdp_endpoint_url = https://console.dps.mow-dev.cloudera.com/
 * `./cleanup.sh`
 
 
+## Setting up Roles
 ![Image](https://github.com/purn1mak/cdp-demos/blob/master/roles.png)
