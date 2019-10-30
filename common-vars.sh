@@ -29,12 +29,44 @@ export CDP_IAM=
 export CDP_CORE=
 export INTERNET_OPTION=public
 
-export IDBROKER_ROLE=idbroker-${DATALAKE}
-export DATALAKE_ADMIN_ROLE=dladmin-${DATALAKE}
-export DATALAKE_DATAENG_ROLE=dataeng-${DATALAKE}
-export DATALAKE_DATASCI_ROLE=datasci-${DATALAKE}
-export DATALAKE_LOG_ROLE=log-${DATALAKE}
+
+#------------------------------------------------------- DO NOT CHANGE FOLLOWING ------------------------------------------#
+# Four Roles
+export IDBROKER_ROLE=${DATALAKE}-idbroker-role
+export DATALAKE_LOG_ROLE=${DATALAKE}-log-role
+export DATALAKE_ADMIN_ROLE=${DATALAKE}-datalake-admin-role
+export DATALAKE_RANGER_AUDIT_ROLE=${DATALAKE}-ranger-audit-role
+
+# Six Policies
+export IDBROKER_ROLE_POLICY=${DATALAKE}-idbroker-role-policy
+export LOG_POLICY_S3_ACCESS=${DATALAKE}-log-policy-s3access
+export BUCKET_POLICY_S3_ACCESS=${DATALAKE}-bucket-policy-s3access
+export DYNAMODB_POLICY_NAME=${DATALAKE}-dynamodb-policy
+export RANGER_POLICY_NAME=${DATALAKE}-ranger-audit-policy-s3access
+export DATALAKE_POLICY_NAME=${DATALAKE}-data-lake-policy-s3access
+
+
 export S3GUARD_TABLE=cdp-${DATALAKE}
+
 export DATALAKE_COMMON_POLICY=${DATALAKE}-common
 export DATALAKE_S3GUARD_POLICY=${DATALAKE}-s3guard
 export CDP_ADMIN_GROUP=cdp_${DATALAKE}
+
+
+
+export DATALAKE_DATAENG_ROLE=dataeng-${DATALAKE}
+export DATALAKE_DATASCI_ROLE=datasci-${DATALAKE}
+
+##########################
+###### Input Section ######
+
+#------------------------------------ AWS Inputs ---------------------------------#
+export DATALAKE_PATH=${DATALAKE_BUCKET}/${DATALAKE}
+
+
+
+
+#export DATALAKE_COMMON_POLICY=${DATALAKE}-common
+#export CDP_ADMIN_GROUP=cdp_${DATALAKE}
+#export DATALAKE_DATAENG_ROLE=dataeng-${DATALAKE}
+#export DATALAKE_DATASCI_ROLE=datasci-${DATALAKE}
